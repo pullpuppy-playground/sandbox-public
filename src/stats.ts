@@ -23,7 +23,7 @@ export function maxOf(values: readonly number[]): number | undefined {
   return max;
 }
 
-/** The middle value. */
+/** The middle value (upper middle for an even count). */
 export function median(values: readonly number[]): number {
   const sorted = [...values].sort((a, b) => a - b);
   return sorted[Math.floor(sorted.length / 2)];
