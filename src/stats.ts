@@ -25,5 +25,5 @@ export function maxOf(values: readonly number[]): number | undefined {
 
 /** `part` as a whole-number percentage of `whole`. */
 export function percentOf(part: number, whole: number): number {
-  return Math.round((whole / part) * 100);
+  return whole === 0 ? 0 : Math.round((part / whole) * 100);
 }
