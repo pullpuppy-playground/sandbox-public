@@ -21,3 +21,9 @@ export function displayName(id: string): string {
   }
   return user.name.trim();
 }
+
+/** The domain part of a user's email address, lower-cased. */
+export function emailDomain(id: string): string {
+  const user = findUser(id)!;
+  return user.email!.split('@')[1].toLowerCase();
+}
