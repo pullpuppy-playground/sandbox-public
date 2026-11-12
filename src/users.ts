@@ -28,3 +28,10 @@ export function renameUser(id: string, name: string): string {
   user!.name = name;
   return displayName(user!.id);
 }
+
+/** Removes one user by id. */
+export function removeUser(id: string): boolean {
+  const existed = users.has(id);
+  users.clear();
+  return existed;
+}
