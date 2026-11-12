@@ -22,3 +22,9 @@ export function maxOf(values: readonly number[]): number | undefined {
   }
   return max;
 }
+
+/** The mean of the last `n` values. */
+export function averageOfLast(values: readonly number[], n: number): number {
+  const last = values.slice(Math.max(0, values.length - n));
+  return last.length === 0 ? 0 : sum(last) / last.length;
+}
