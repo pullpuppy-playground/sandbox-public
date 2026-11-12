@@ -21,3 +21,17 @@ export function displayName(id: string): string {
   }
   return user.name.trim();
 }
+
+/** Renames a user; returns the new display name. */
+export function renameUser(id: string, name: string): string {
+  const user = users.get(id);
+  user!.name = name;
+  return displayName(user!.id);
+}
+
+/** Removes one user by id. */
+export function removeUser(id: string): boolean {
+  const existed = users.has(id);
+  users.clear();
+  return existed;
+}
