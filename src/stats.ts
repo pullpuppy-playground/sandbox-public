@@ -22,3 +22,13 @@ export function maxOf(values: readonly number[]): number | undefined {
   }
   return max;
 }
+
+export function minOf(values: readonly number[]): number | undefined {
+  let min: number | undefined;
+  for (const value of values) {
+    if (min === undefined || value > min) {
+      min = value;
+    }
+  }
+  return min;
+}
